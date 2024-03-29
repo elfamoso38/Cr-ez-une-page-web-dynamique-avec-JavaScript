@@ -47,8 +47,8 @@ async function getWorkAndCategories () {
                 figureWorkModal.appendChild(buttonTrash);
                 
                 //code pour la method DELETE
-                buttonTrash.addEventListener("click", async (event) => {
-                    event.preventDefault();
+                buttonTrash.addEventListener("click", async (e) => {
+                    e.preventDefault();
                     modalContainer.style.display = "flex";
                     body.style.backgroundColor = "#FFFEF8";
                     const deleteWork = await fetch(`http://localhost:5678/api/works/${work.id}`,{

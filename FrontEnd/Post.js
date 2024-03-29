@@ -69,8 +69,8 @@ const Modal3 = document.querySelector(".modal3");
 
 
 
-BtnValidate.addEventListener("click", (event) => {
-    event.preventDefault();
+BtnValidate.addEventListener("click", (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append("title", title.value);
     formData.append("category", category.value);
@@ -121,8 +121,8 @@ BtnValidate.addEventListener("click", (event) => {
         buttonTrash.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         buttonTrash.style.cursor = "pointer";
         figureWorkModal.appendChild(buttonTrash);
-        buttonTrash.addEventListener("click", async function () {
-            event.preventDefault();
+        buttonTrash.addEventListener("click", async function (e) {
+        e.preventDefault();
            
             const deleteWork = await fetch(`http://localhost:5678/api/works/${data.id}`,{
                 method: "DELETE",
@@ -147,6 +147,7 @@ BtnValidate.addEventListener("click", (event) => {
     })
     .catch(error => console.log("voici l'erreur",error));
     Modal2.style.display = "none";
+    return false;
 });
 
 
