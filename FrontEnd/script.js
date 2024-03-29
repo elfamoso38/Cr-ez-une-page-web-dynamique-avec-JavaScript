@@ -194,5 +194,19 @@ document.addEventListener("click", function(event) {
     if (event.target.classList.contains("fa-xmark")) {
         modalContainer.style.display = "none";
         body.style.backgroundColor = "#FFFEF8";
+        // réinitialisation des champs du formulaire
+        title.value = "";
+        category.value = "";
+        previewImage.style.display = "none";
+        labelFile.style.display = "flex";
+        iconFile.style.display ="flex";
+        paragrapheFile.style.display = "flex";
+    }
+});
+
+document.addEventListener("click",(event) => {
+    if (event.target.classList.contains("modal-container")) {
+        modalContainer.style.display = "none";
+        body.style.backgroundColor = "#FFFEF8";
     }
 });
